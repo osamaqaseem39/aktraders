@@ -1,0 +1,246 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(cuid())
+  name         String
+  email        String    @unique
+  phone        String?
+  role         Role      @default(CLIENT)
+  passwordHash String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  // Relations
+  clientProfile    ClientProfile?
+  shipments        Shipment[]
+  quotes           Quote[]
+  blogPosts        BlogPost[]
+  accounts         Account[]
+  sessions         Session[]
+
+  @@map("users")
+}
+
+model ClientProfile {
+  id         String   @id @default(cuid())
+  clientId   String   @unique
+  companyName String?
+  address    String?
+  vatNumber  String?
+  taxNumber  String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // Relations
+  client User @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@map("client_profiles")
+}
+
+model Shipment {
+  id                String         @id @default(cuid())
+  clientId          String
+  trackingNumber    String         @unique
+  origin            String
+  destination       String
+  cargoDetails      String
+  weight            Float?
+  volume            Float?
+  status            ShipmentStatus @default(PENDING)
+  estimatedDelivery DateTime?
+  actualDelivery    DateTime?
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+
+  // Relations
+  client     User                @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  statusLogs ShipmentStatusLog[]
+  invoices   Invoice[]
+
+  @@map("shipments")
+}
+
+model ShipmentStatusLog {
+  id          String         @id @default(cuid())
+  shipmentId  String
+  status      ShipmentStatus
+  location    String?
+  notes       String?
+  timestamp   DateTime       @default(now())
+
+  // Relations
+  shipment Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+
+  @@map("shipment_status_logs")
+}
+
+model Quote {
+  id              String      @id @default(cuid())
+  clientId        String?
+  clientName      String?
+  clientEmail     String?
+  clientPhone     String?
+  cargoDetails    String
+  origin          String
+  destination     String
+  estimatedWeight Float?
+  estimatedVolume Float?
+  status          QuoteStatus @default(PENDING)
+  estimatedCost   Float?
+  notes           String?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  // Relations
+  client User? @relation(fields: [clientId], references: [id], onDelete: SetNull)
+
+  @@map("quotes")
+}
+
+model Invoice {
+  id            String        @id @default(cuid())
+  shipmentId    String
+  amount        Float
+  dueDate       DateTime
+  paymentStatus PaymentStatus @default(PENDING)
+  description   String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  // Relations
+  shipment Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+
+  @@map("invoices")
+}
+
+model BlogPost {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  content     String
+  excerpt     String
+  coverImage  String?
+  authorId    String
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  @@map("blog_posts")
+}
+
+model ContactMessage {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  message   String
+  subject   String?
+  status    MessageStatus @default(NEW)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@map("contact_messages")
+}
+
+model JobPosting {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  location    String
+  deadline    DateTime
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("job_postings")
+}
+
+// NextAuth.js models
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// Enums
+enum Role {
+  ADMIN
+  STAFF
+  CLIENT
+}
+
+enum ShipmentStatus {
+  PENDING
+  IN_TRANSIT
+  CUSTOMS_CLEARANCE
+  DELIVERED
+  CANCELLED
+  ON_HOLD
+}
+
+enum QuoteStatus {
+  PENDING
+  APPROVED
+  DECLINED
+  CONVERTED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  OVERDUE
+  CANCELLED
+}
+
+enum MessageStatus {
+  NEW
+  READ
+  REPLIED
+  ARCHIVED
+}
