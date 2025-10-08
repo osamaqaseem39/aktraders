@@ -10,6 +10,9 @@ import {
   Warehouse, 
   Shield, 
   Globe,
+  Package,
+  Calculator,
+  MapPin,
   ArrowRight 
 } from "lucide-react"
 import { companyInfo } from "@/lib/company-data"
@@ -22,6 +25,9 @@ const iconMap = {
   Warehouse,
   Shield,
   Globe,
+  Package,
+  Calculator,
+  MapPin,
 }
 
 export function Services() {
@@ -38,18 +44,24 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           {companyInfo.services.map((service) => {
-            const IconComponent = iconMap[service.icon as keyof typeof iconMap]
-            
+            const IconComponent = iconMap[service.icon as keyof typeof iconMap] || Globe
+            const solidBgClass = (service.iconColor?.replace("text-", "bg-") || "bg-gray-900").trim()
+            const iconImage: string | undefined = (service as any).iconImage
+
             return (
               <div key={service.id}>
-                <Card className="h-full hover:shadow-lg transition-all duration-300 group border-0 shadow-md">
+                <Card className="h-full transition-all duration-200 group border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-0.5">
                   <CardHeader className="text-center pb-4">
-                    <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${service.color} flex items-center justify-center`}>
-                      <IconComponent className="h-8 w-8 text-white" />
+                    <div className={`w-14 h-14 mx-auto mb-3 rounded-full ${solidBgClass} flex items-center justify-center`}>
+                      {iconImage ? (
+                        <img src={iconImage} alt={service.shortName || service.name} className="h-7 w-7" />
+                      ) : (
+                        <IconComponent className="h-7 w-7 text-white" />
+                      )}
                     </div>
-                    <CardTitle className="text-xl font-bold text-gray-900">
+                    <CardTitle className="text-lg font-semibold text-gray-900">
                       {service.name}
                     </CardTitle>
                     <CardDescription className="text-gray-600">
@@ -64,37 +76,22 @@ export function Services() {
                       <ul className="space-y-1">
                         {service.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="text-sm text-gray-600 flex items-center">
-                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-gray-900 rounded-full mr-2 flex-shrink-0"></div>
                             {feature}
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    {/* Coverage */}
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-gray-900 text-sm">Coverage:</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {service.coverage.map((location, locationIndex) => (
-                          <span
-                            key={locationIndex}
-                            className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full"
-                          >
-                            {location}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
                     {/* CTA */}
                     <Button 
                       variant="outline" 
-                      className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-300"
+                      className="w-full hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-colors duration-150"
                       asChild
                     >
                       <Link href={`/services/${service.id}`}>
                         Learn More
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                       </Link>
                     </Button>
                   </CardContent>

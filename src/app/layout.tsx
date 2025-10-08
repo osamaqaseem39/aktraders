@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Jost } from "next/font/google"
 import "./globals.css"
 import { Providers } from "@/components/providers"
 import { Toaster } from "@/components/ui/toaster"
 
-const inter = Inter({ subsets: ["latin"] })
+const jost = Jost({ subsets: ["latin"], variable: "--font-jost" })
 
 export const metadata: Metadata = {
   title: "A.K. Traders® | Freight Forwarding & Customs Clearance in Pakistan",
@@ -35,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning className={jost.variable}>
+      <body className="font-sans">
         <Providers>
           {children}
           <Toaster />

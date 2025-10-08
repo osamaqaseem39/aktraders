@@ -39,7 +39,7 @@ export function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top bar */}
-      <div className="bg-blue-600 text-white py-2">
+      <div className="bg-[#007FFF] text-white py-2">
         <div className="container">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-6">
@@ -64,7 +64,7 @@ export function Header() {
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-[#007FFF] rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">AK</span>
             </div>
             <div>
@@ -84,9 +84,9 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-blue-600",
+                  "text-sm font-medium transition-colors hover:text-[#007FFF]",
                   pathname === item.href
-                    ? "text-blue-600"
+                    ? "text-[#007FFF]"
                     : "text-gray-700"
                 )}
               >
@@ -150,9 +150,9 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-base font-medium transition-colors hover:text-blue-600",
+                    "text-base font-medium transition-colors hover:text-[#007FFF]",
                     pathname === item.href
-                      ? "text-blue-600"
+                      ? "text-[#007FFF]"
                       : "text-gray-700"
                   )}
                   onClick={() => setMobileMenuOpen(false)}

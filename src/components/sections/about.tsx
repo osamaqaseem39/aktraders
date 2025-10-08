@@ -69,7 +69,7 @@ export function About() {
 
           {/* Right Content - Image Placeholder */}
           <div className="relative">
-            <div className="aspect-[4/3] bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center">
+            <div className="aspect-[4/3] bg-blue-100 rounded-2xl flex items-center justify-center">
               <div className="text-center space-y-4">
                 <Award className="h-16 w-16 text-blue-600 mx-auto" />
                 <div className="text-2xl font-bold text-blue-800">50+ Years</div>
@@ -91,7 +91,7 @@ export function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
             {companyInfo.whyChooseUs.map((item) => {
               const IconComponent = iconMap[item.icon as keyof typeof iconMap]
               
@@ -129,13 +129,13 @@ export function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
               {companyInfo.values.map((value) => {
                 const IconComponent = iconMap[value.icon as keyof typeof iconMap]
                 
                 return (
               <div key={value.id} className="text-center space-y-3">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto">
+                    <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto">
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
                     <h4 className="text-xl font-semibold text-gray-900">

@@ -120,9 +120,9 @@ export function Contact() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Our Offices
               </h3>
-              <div className="space-y-6">
+              <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
                 {companyInfo.offices.map((office) => (
-                  <Card key={office.id} className="border-0 shadow-md">
+                  <Card key={office.id} className="border-0 shadow-md min-w-[280px] snap-start">
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
                         <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
