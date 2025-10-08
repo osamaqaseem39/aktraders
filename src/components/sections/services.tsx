@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { 
@@ -48,7 +49,7 @@ export function Services() {
           {companyInfo.services.map((service) => {
             const IconComponent = iconMap[service.icon as keyof typeof iconMap] || Globe
             const solidBgClass = (service.iconColor?.replace("text-", "bg-") || "bg-gray-900").trim()
-            const iconImage: string | undefined = (service as any).iconImage
+            const iconImage: string | undefined = (service as { iconImage?: string }).iconImage
 
             return (
               <div key={service.id}>
@@ -56,7 +57,7 @@ export function Services() {
                   <CardHeader className="text-center pb-4">
                     <div className={`w-14 h-14 mx-auto mb-3 rounded-full ${solidBgClass} flex items-center justify-center`}>
                       {iconImage ? (
-                        <img src={iconImage} alt={service.shortName || service.name} className="h-7 w-7" />
+                        <Image src={iconImage} alt={service.shortName || service.name} width={28} height={28} className="h-7 w-7" />
                       ) : (
                         <IconComponent className="h-7 w-7 text-white" />
                       )}

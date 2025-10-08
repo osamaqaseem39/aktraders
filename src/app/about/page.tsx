@@ -76,7 +76,7 @@ export default function AboutPage() {
                   <div className="prose prose-lg">
                     <p className="text-gray-600 leading-relaxed">
                       Established in 1974 in Quetta, Pakistan, A.K. Traders (Regd.) has grown from a local 
-                      customs clearance agent into one of Pakistan's most respected and experienced freight 
+                      customs clearance agent into one of Pakistan&apos;s most respected and experienced freight 
                       forwarding and logistics service providers.
                     </p>
                     <p className="text-gray-600 leading-relaxed">
@@ -85,7 +85,7 @@ export default function AboutPage() {
                       Afghan transit trade, CIS transportation, multimodal forwarding, and customs clearance.
                     </p>
                     <p className="text-gray-600 leading-relaxed">
-                      A.K. Traders is uniquely positioned in the region, serving as a gateway for Pakistan's trade 
+                      A.K. Traders is uniquely positioned in the region, serving as a gateway for Pakistan&apos;s trade 
                       with Afghanistan, Iran, and Central Asian Republics (CIS).
                     </p>
                   </div>

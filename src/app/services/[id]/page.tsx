@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -47,7 +48,7 @@ export default function ServicePage({ params }: { params: { id: string } }) {
           </div>
           <div className="w-full">
             <div className="aspect-[16/9] bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center">
-              <img src={heroImage} alt={`${service.shortName || service.name} hero`} className="w-full h-full object-cover" />
+              <Image src={heroImage} alt={`${service.shortName || service.name} hero`} width={800} height={450} className="w-full h-full object-cover" />
             </div>
             <div className="mt-3 text-sm text-gray-600">
               Add an image at <code className="bg-gray-100 px-1 py-0.5 rounded">{heroImage}</code>

@@ -1,10 +1,9 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent } from "@/components/ui/card"
-import { Search, ArrowRight, CheckCircle } from "lucide-react"
+import { ArrowRight, CheckCircle } from "lucide-react"
 import { companyInfo } from "@/lib/company-data"
 // Framer Motion removed for now - can be added back later
 
@@ -60,7 +59,7 @@ export function Hero() {
           {/* Right Content - Illustration */}
           <div className="hidden lg:block">
             <div className="w-full h-full flex items-center justify-center">
-              <img src="/images/heroimage.jpg" alt="Logistics operations" className="rounded-xl w-full h-auto max-w-md" />
+              <Image src="/images/heroimage.jpg" alt="Logistics operations" width={400} height={400} className="rounded-xl w-full h-auto max-w-md" />
             </div>
           </div>
         </div>
