@@ -41,7 +41,7 @@ export default function ContactPage() {
         <div className="container">
           <div className="text-center space-y-4 mb-12">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">Contact Us</h1>
-            <p className="text-lg text-gray-600">We're here to help. Reach out for quotes, support, or general inquiries.</p>
+            <p className="text-lg text-gray-600">We&apos;re here to help. Reach out for quotes, support, or general inquiries.</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
