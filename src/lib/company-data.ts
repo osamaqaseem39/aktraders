@@ -793,7 +793,7 @@ export const companyInfo = {
     {
       id: "network",
       title: "Strong Network & Presence",
-      description: "Offices in Quetta, Karachi, Chaman, Peshawar, and Kabul, with nationwide coverage through associates.",
+      description: "Head office in Quetta with nationwide coverage through associates.",
       icon: "Users"
     },
     {
@@ -1004,20 +1004,6 @@ export const companyInfo = {
         }
       ],
       coverage: ["Karachi Port", "Port Qasim", "Torkham Border", "Chaman Border", "Taftan Border", "National Highways"]
-    },
-    {
-      country: "Iran",
-      type: "Strategic Transit Partner",
-      offices: [],
-      coverage: ["Tehran", "Bandar Abbas", "Tabriz", "Mashhad", "Isfahan", "Herat Access", "Kandahar Access"],
-      routes: ["Taftan Border", "Islam Qala Transit", "Nimruz Transit", "CIS Connections"]
-    },
-    {
-      country: "CIS Countries",
-      type: "Regional Pioneer",
-      offices: [],
-      coverage: ["Turkmenistan", "Uzbekistan", "Tajikistan", "Kazakhstan", "Kyrgyzstan"],
-      routes: ["Multimodal via Iran", "Afghanistan Transit", "Regional Partnerships", "Long-distance Coordination"]
     }
   ],
 

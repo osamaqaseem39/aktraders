@@ -82,8 +82,8 @@ export default function ContactPage() {
 
             {/* Offices - full width below on mobile */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Offices</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Head Office</h3>
+              <div className="grid grid-cols-1 gap-6">
                 {companyInfo.offices.map((office) => (
                   <Card key={office.id} className="border-0 shadow-md">
                     <CardContent className="p-6">
@@ -102,6 +102,23 @@ export default function ContactPage() {
                     </CardContent>
                   </Card>
                 ))}
+              </div>
+              
+              {/* Google Maps Embed */}
+              <div className="mt-6">
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">Find Us on Map</h4>
+                <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d65442.51107109316!2d66.9501352!3d30.2050217!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424208bf3865dbdf%3A0x9752b47acad2ad30!2sAK%20Traders%20(Quetta)!5e1!3m2!1sen!2s!4v1761040658738!5m2!1sen!2s" 
+                    width="100%" 
+                    height="100%" 
+                    style={{border: 0}} 
+                    allowFullScreen 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="A.K. Traders Location Map"
+                  />
+                </div>
               </div>
             </div>
           </div>
