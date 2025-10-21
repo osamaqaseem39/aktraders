@@ -1,8 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 import Image from "next/image"
 import { Menu, X, Phone, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -19,22 +19,7 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [user, setUser] = useState<{ id: string; email: string; name: string; role: string } | null>(null)
   const pathname = usePathname()
-  const router = useRouter()
-
-  useEffect(() => {
-    const userData = localStorage.getItem("user")
-    if (userData) {
-      setUser(JSON.parse(userData))
-    }
-  }, [])
-
-  const handleSignOut = () => {
-    localStorage.removeItem("user")
-    setUser(null)
-    router.push("/")
-  }
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -87,32 +72,9 @@ export function Header() {
 
           {/* CTA buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            {user ? (
-              <div className="flex items-center space-x-4">
-                <span className="text-sm text-gray-700">
-                  Welcome, {user.name}
-                </span>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/dashboard">Dashboard</Link>
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  onClick={handleSignOut}
-                >
-                  Sign Out
-                </Button>
-              </div>
-            ) : (
-              <>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/auth/signin">Sign In</Link>
-                </Button>
-                <Button size="sm" asChild>
-                  <Link href="/quote">Get Quote</Link>
-                </Button>
-              </>
-            )}
+            <Button size="sm" asChild>
+              <Link href="/quote">Get Quote</Link>
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -151,32 +113,9 @@ export function Header() {
                 </Link>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
-                {user ? (
-                  <>
-                    <div className="text-sm text-gray-700 mb-2">
-                      Welcome, {user.name}
-                    </div>
-                    <Button variant="outline" size="sm" asChild>
-                      <Link href="/dashboard">Dashboard</Link>
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      onClick={handleSignOut}
-                    >
-                      Sign Out
-                    </Button>
-                  </>
-                ) : (
-                  <>
-                    <Button variant="outline" size="sm" asChild>
-                      <Link href="/auth/signin">Sign In</Link>
-                    </Button>
-                    <Button size="sm" asChild>
-                      <Link href="/quote">Get Quote</Link>
-                    </Button>
-                  </>
-                )}
+                <Button size="sm" asChild>
+                  <Link href="/quote">Get Quote</Link>
+                </Button>
               </div>
             </div>
           </div>

@@ -45,90 +45,6 @@ export const companyInfo = {
       hours: "Monday - Friday: 9:00 AM - 6:00 PM",
       services: ["Customs Clearance", "Freight Forwarding", "Afghan Transit Trade", "CIS Transportation"],
       facilities: ["Border Access", "Customs House", "Warehousing", "Project Logistics"]
-    },
-    {
-      id: "karachi",
-      name: "Karachi Operations",
-      type: "Operations Center",
-      address: {
-        street: "Port Operations",
-        area: "Karachi Port & Port Qasim",
-        city: "Karachi",
-        country: "Pakistan"
-      },
-      coordinates: {
-        lat: 24.8607,
-        lng: 67.0011
-      },
-      phone: "+92-81-2824023",
-      fax: "",
-      email: "info@aktraders.pk",
-      hours: "Monday - Friday: 9:00 AM - 6:00 PM",
-      services: ["Sea Freight", "Port Operations", "Container Handling", "Warehousing"],
-      facilities: ["Port Access", "Container Freight Station", "Bonded Warehousing"]
-    },
-    {
-      id: "chaman",
-      name: "Chaman Border Office",
-      type: "Border Operations",
-      address: {
-        street: "Chaman Border",
-        area: "Pakistan-Afghanistan Border",
-        city: "Chaman",
-        country: "Pakistan"
-      },
-      coordinates: {
-        lat: 30.9176,
-        lng: 66.4512
-      },
-      phone: "+92-81-2824023",
-      fax: "",
-      email: "info@aktraders.pk",
-      hours: "Monday - Saturday: 8:00 AM - 5:00 PM",
-      services: ["Border Clearance", "Afghan Transit", "Documentation", "Cargo Verification"],
-      facilities: ["Border Crossing", "Customs Liaison", "Transit Documentation"]
-    },
-    {
-      id: "peshawar",
-      name: "Peshawar Operations",
-      type: "Regional Office",
-      address: {
-        street: "Regional Operations",
-        area: "Torkham Border Access",
-        city: "Peshawar",
-        country: "Pakistan"
-      },
-      coordinates: {
-        lat: 34.0151,
-        lng: 71.5249
-      },
-      phone: "+92-81-2824023",
-      fax: "",
-      email: "info@aktraders.pk",
-      hours: "Monday - Friday: 9:00 AM - 6:00 PM",
-      services: ["Torkham Operations", "Afghan Transit", "Regional Logistics"],
-      facilities: ["Border Access", "Transit Facilities"]
-    },
-    {
-      id: "kabul",
-      name: "Kabul Office",
-      type: "International Office",
-      address: {
-        street: "Afghanistan Operations",
-        area: "Kabul",
-        city: "Kabul",
-        country: "Afghanistan"
-      },
-      coordinates: {
-        lat: 34.5553,
-        lng: 69.2075
-      },
-      phone: "+92-81-2824023",
-      fax: "",
-      email: "info@aktraders.pk",
-      hours: "Sunday - Thursday: 9:00 AM - 5:00 PM",
-      services: ["On-ground Support", "Proof of Delivery", "Client Liaison", "Documentation"],
-      facilities: ["Local Presence", "Delivery Confirmation", "Client Support"]
     }
   ],
 
@@ -136,7 +52,7 @@ export const companyInfo = {
   stats: [
     { number: "50+", label: "Years Experience", icon: "Award" },
     { number: "FIATA", label: "Member Since 1982", icon: "Globe" },
-    { number: "5", label: "Office Locations", icon: "MapPin" },
+    { number: "1", label: "Head Office", icon: "MapPin" },
     { number: "24/7", label: "Support Available", icon: "Clock" }
   ],
 
@@ -1085,45 +1001,9 @@ export const companyInfo = {
           address: "41 – 2nd Floor, Ahmed Complex, M.A. Jinnah Road",
           services: ["Customs Clearance", "Freight Forwarding", "Afghan Transit Trade", "CIS Transportation"],
           facilities: ["Border Access", "Customs House", "Warehousing", "Project Logistics"]
-        },
-        {
-          city: "Karachi",
-          type: "Operations Center",
-          address: "Port Operations, Karachi Port & Port Qasim",
-          services: ["Sea Freight", "Port Operations", "Container Handling", "Warehousing"],
-          facilities: ["Port Access", "Container Freight Station", "Bonded Warehousing"]
-        },
-        {
-          city: "Chaman",
-          type: "Border Operations",
-          address: "Chaman Border, Pakistan-Afghanistan Border",
-          services: ["Border Clearance", "Afghan Transit", "Documentation", "Cargo Verification"],
-          facilities: ["Border Crossing", "Customs Liaison", "Transit Documentation"]
-        },
-        {
-          city: "Peshawar",
-          type: "Regional Office",
-          address: "Regional Operations, Torkham Border Access",
-          services: ["Torkham Operations", "Afghan Transit", "Regional Logistics"],
-          facilities: ["Border Access", "Transit Facilities"]
         }
       ],
       coverage: ["Karachi Port", "Port Qasim", "Torkham Border", "Chaman Border", "Taftan Border", "National Highways"]
-    },
-    {
-      country: "Afghanistan",
-      type: "Transit Trade Specialist",
-      offices: [
-        {
-          city: "Kabul",
-          type: "International Office",
-          address: "Afghanistan Operations, Kabul",
-          services: ["On-ground Support", "Proof of Delivery", "Client Liaison", "Documentation"],
-          facilities: ["Local Presence", "Delivery Confirmation", "Client Support"]
-        }
-      ],
-      coverage: ["Kabul", "Kandahar", "Herat", "Mazar-e-Sharif", "Jalalabad"],
-      routes: ["Chaman Border", "Torkham Border", "Taftan-Islam Qala", "Nimruz Border"]
     },
     {
       country: "Iran",
