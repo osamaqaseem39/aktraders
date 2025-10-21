@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 import { companyInfo } from "@/lib/company-data"
 
@@ -16,7 +17,6 @@ const footerLinks = {
     { name: "Customs Clearance", href: "/services/customs-clearance" },
   ],
   support: [
-    { name: "Track Shipment", href: "/track" },
     { name: "Request Quote", href: "/quote" },
     { name: "Help Center", href: "/help" },
     { name: "Documentation", href: "/docs" },
@@ -36,9 +36,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">AK</span>
-              </div>
+              <Image src="/images/logo.png" alt="A.K. Traders logo" width={40} height={40} className="w-10 h-10 object-contain" />
               <div>
                 <div className="font-bold text-xl">{companyInfo.name}</div>
                 <div className="text-sm text-gray-400">{companyInfo.tagline}</div>

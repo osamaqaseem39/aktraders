@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
+import Image from "next/image"
 import { Menu, X, Phone, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { companyInfo } from "@/lib/company-data"
@@ -12,7 +13,6 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Track Shipment", href: "/track" },
   { name: "Request Quote", href: "/quote" },
   { name: "Contact", href: "/contact" },
 ]
@@ -39,7 +39,7 @@ export function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top bar */}
-      <div className="bg-[#007FFF] text-white py-2">
+      <div className="bg-blue-600 text-white py-2">
         <div className="container">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-6">
@@ -63,18 +63,8 @@ export function Header() {
       <div className="container">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-[#007FFF] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">AK</span>
-            </div>
-            <div>
-              <div className="font-bold text-xl text-gray-900">
-                {companyInfo.name}
-              </div>
-              <div className="text-sm text-gray-600">
-                {companyInfo.tagline}
-              </div>
-            </div>
+          <Link href="/" className="flex items-center space-x-3">
+            <Image src="/images/logo.png" alt="A.K. Traders logo" width={80} height={80} className="h-20 w-auto object-contain" />
           </Link>
 
           {/* Desktop navigation */}
@@ -84,9 +74,9 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-[#007FFF]",
+                  "text-sm font-medium transition-colors hover:text-blue-600",
                   pathname === item.href
-                    ? "text-[#007FFF]"
+                    ? "text-blue-600"
                     : "text-gray-700"
                 )}
               >
@@ -150,9 +140,9 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-base font-medium transition-colors hover:text-[#007FFF]",
+                    "text-base font-medium transition-colors hover:text-blue-600",
                     pathname === item.href
-                      ? "text-[#007FFF]"
+                      ? "text-blue-600"
                       : "text-gray-700"
                   )}
                   onClick={() => setMobileMenuOpen(false)}

@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
@@ -67,14 +68,17 @@ export function About() {
             </Button>
           </div>
 
-          {/* Right Content - Image Placeholder */}
+          {/* Right Content - Image */}
           <div className="relative">
-            <div className="aspect-[4/3] bg-blue-100 rounded-2xl flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <Award className="h-16 w-16 text-blue-600 mx-auto" />
-                <div className="text-2xl font-bold text-blue-800">50+ Years</div>
-                <div className="text-blue-700">of Excellence</div>
-              </div>
+            <div className="aspect-[4/3] relative overflow-hidden rounded-2xl">
+              <Image
+                src="/images/aboutsection.jpg"
+                alt="A.K. Traders logistics operations"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
             </div>
           </div>
         </div>

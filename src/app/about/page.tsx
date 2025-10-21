@@ -189,6 +189,100 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Detailed Company Profile */}
+        <section className="py-20">
+          <div className="container">
+            <div className="max-w-4xl mx-auto prose prose-lg">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 not-prose mb-6">
+                Company Profile & Philosophy
+              </h2>
+              <p className="text-gray-700 leading-relaxed">
+                For more than five decades, {companyInfo.fullName} has remained dedicated to a simple, durable idea: logistics is not merely the art of moving cargo—it is the science of earning and safeguarding trust. Founded in Quetta in {companyInfo.established}, our company learned early that the shortest route between two points is not always a straight line on a map. In real markets, especially across South and Central Asia, the shortest route is the one with the fewest uncertainties, the greatest clarity in documentation, and the strongest relationships at every node in the chain. That understanding continues to shape our operating philosophy today. We invest heavily in process discipline, regulatory literacy, and people who can make good decisions under pressure. We believe that reliability is designed, not improvised; it is the outcome of systems that are continuously refined to absorb volatility—whether it stems from seasonal congestion at ports, shifting border protocols, or the urgent timelines that define humanitarian and project logistics.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Our journey from a specialized customs clearance agent to a comprehensive logistics partner mirrors the transformation of trade corridors that connect Pakistan with Afghanistan, Iran, and the CIS countries. We built competence in complex, multimodal operations—Sea–Road, Sea–Rail, and Road–Rail—precisely because our clients needed dependable options when one corridor became constrained or when a specialized cargo demanded a distinct sequence of handling. The hallmark of our service is optionality: multiple viable routes, multiple contingency plans, and the ability to pivot while preserving both cost discipline and compliance integrity. In markets where uncertainty is a constant, optionality is not a luxury; it is a competitive advantage we systematize for every client engagement.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                We measure our performance by three metrics: schedule adherence, documentation accuracy, and the quality of communication with stakeholders—from customs officials and terminal operators to our clients’ procurement and finance teams. The interplay between these metrics determines the true cost of logistics. A slight error in documentation can erase the savings of a favorable freight rate; a missing update can cascade into production downtime for a factory line or service interruptions for a relief mission. Our operating model therefore focuses on closing information gaps, standardizing repeatable tasks, and elevating exception handling as a first-class capability. When circumstances change—as they often do—we work with facts, not assumptions, and we communicate early with precise options.
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 not-prose mt-12 mb-4">Regional Expertise That Reduces Risk</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Our footprint across Quetta, Karachi, Chaman, Peshawar, and Kabul enables us to manage end-to-end flows that many international forwarders must subcontract. In Afghan transit and CIS trade, distance is only one dimension of difficulty; the other dimensions are regulatory nuance, seasonal variability, geopolitics, and the unique operational tempo at border crossings. We have learned how to plan for bridge closures, account for convoy protocols, anticipate document verification cycles, and maintain compliance continuity amid evolving requirements. The result is a logistics experience that feels predictable in environments that are anything but predictable. This is why NGOs, government entities, and private sector clients rely on us for mission-critical movements.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Karachi Port and Port Qasim anchor our sea freight operations, from where we design inland routes to border points or industrial centers. For Kabul-bound shipments, we assess whether Chaman, Torkham, or Taftan–Islam Qala best fits the consignment profile and risk tolerance. We consider security advisories, road conditions, permissible convoy sizes, and local holiday calendars that might affect customs staffing. In CIS-bound movements via Iran, we plan multimodal handoffs that preserve schedule fidelity while respecting local regulations and terminal cut-offs. Every route plan is documented, and every document is audited; we do not confuse speed with haste. When we move fast, it is because we prepared to move fast long before the shipment arrived.
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 not-prose mt-12 mb-4">Service Capabilities & Operating Standards</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Our core services—freight forwarding, customs clearance, overland transportation, warehousing and CFS, project logistics, duty drawback advisory, and CIS transportation—operate on shared standards: document completeness, chain-of-custody integrity, milestone-based tracking, and clear escalation paths. We design SOPs that are practical for field teams yet rigorous enough for audit trails. The same discipline that helps a humanitarian agency deliver medical supplies to remote provinces also enables a manufacturer to control landed costs on a just-in-time import or a heavy-equipment project to meet a commissioning date.
+              </p>
+              <ul className="list-disc pl-6 text-gray-700">
+                <li><strong>Freight Forwarding:</strong> Multimodal routing with carrier, port, and terminal coordination. Emphasis on transit time reliability, equipment availability, and pre-alert accuracy.</li>
+                <li><strong>Customs Clearance:</strong> End-to-end document preparation and representation with authorities. We design bill of entry strategies that reflect HS codes, exemptions, valuation norms, and audit resilience.</li>
+                <li><strong>Overland Transportation:</strong> Bonded and unbonded options with vetted carriers, GPS-enabled visibility where applicable, and loading protocols tailored to cargo sensitivity.</li>
+                <li><strong>Warehousing & CFS:</strong> Verification, segregation, and container stuffing with inventory controls appropriate for both export consolidation and import deconsolidation.</li>
+                <li><strong>Project Logistics:</strong> Route surveys, axle-load planning, permits and NOCs, lift plans, and on-site coordination with EPC teams and safety officers.</li>
+                <li><strong>Duty Drawback:</strong> Advisory on eligibility, documentation precision, and digital claim tracking to reduce cycle times and improve cash flow predictability.</li>
+                <li><strong>CIS Transportation:</strong> Multimodal corridor planning via Iran with long-distance handoffs engineered to maintain schedule integrity over thousands of kilometers.</li>
+              </ul>
+
+              <h3 className="text-2xl font-bold text-gray-900 not-prose mt-12 mb-4">Process Discipline: How We Deliver Predictability</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Predictability is a process outcome. We begin with a shipment blueprint that defines scope, parties, milestones, and decision rights. Pre-shipment, we validate documents against current requirements and known edge cases. In-transit, we use milestone checkpoints—gate-in, customs lodgment, examination (if applicable), release, handover—to create a clear picture of progress. Post-delivery, we complete reconciliation, ensuring that every expected document (bill of lading, commercial invoice, packing list, COO, permits, inspection reports) is archived and available for internal or external audit. When exceptions arise, they are classified (regulatory, operational, weather/security, carrier-related) and resolved via documented playbooks. This continuous loop of planning, execution, review, and learning allows us to improve outcomes shipment after shipment.
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 not-prose mt-12 mb-4">Compliance, Governance, and Documentation Integrity</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Our compliance posture is proactive. We monitor regulatory notices, engage with authorities, and update internal guidance so that clients are not surprised by procedural shifts. Documentation integrity is a non-negotiable principle; we treat each document as both an operational instrument and a legal artifact. Accuracy in HS classification, declared values, country of origin, and licensing terms protects clients from penalties and protects supply chains from avoidable delays. Our teams are trained to identify anomalies early and to raise clarifying queries before submission, not after rejection. Over decades, this discipline has earned us credibility with officials who recognize careful work when they see it.
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 not-prose mt-12 mb-4">Technology, Visibility, and Communication</h3>
+              <p className="text-gray-700 leading-relaxed">
+                We apply technology with purpose. Where GPS visibility is possible, we enable it; where it is not, we compensate with tighter manual controls and more frequent updates. We standardize communication templates for pre-alerts, milestone notifications, and exception reports, so that information is consistent across teams and time zones. We understand that our updates feed into client systems—production schedules, financial forecasts, stock allocations—and we therefore optimize for clarity over verbosity. A good update tells you what changed, why it changed, and what your options are—in time to choose the best one.
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 not-prose mt-12 mb-4">Case Snapshots</h3>
+              <p className="text-gray-700 leading-relaxed">
+                In humanitarian missions, speed and predictability can be matters of life and well-being. For a relief agency operating in Afghanistan, we orchestrated consolidated shipments of medical supplies and nutrition packs through Karachi with inland routes calibrated to border dynamics. We synchronized customs clearance, convoy timing, and last-mile delivery windows to ensure cold-chain integrity where needed and on-time arrivals despite fluctuating local conditions. In project logistics, we supported heavy-lift components for energy infrastructure by conducting route surveys, securing permits, and coordinating specialized handling equipment—all while sequencing the movements to align with site readiness and safety protocols. For exporters seeking duty drawback, we designed documentation routines that reduced claim rejections and introduced transparent status tracking to accelerate recoveries.
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 not-prose mt-12 mb-4">Sustainability & Responsibility</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Sustainability in logistics begins with avoiding waste: wasted time at terminals, wasted movements due to rework, and wasted materials from poor handling. Our approach reduces these forms of waste through better planning and tighter execution. We encourage modal choices that balance cost, speed, and environmental impact, and we maintain equipment and handling standards that protect cargo integrity, thereby reducing spoilage and disposal. Responsibility also means contributing positively to the communities in which we operate. We invest in training local teams, upskilling staff on safety and compliance, and supporting initiatives that strengthen the resilience of border communities that are vital to regional trade.
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 not-prose mt-12 mb-4">People, Training, and Culture</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Our people are our most reliable infrastructure. We recruit for judgment and train for discipline. New team members learn how to think about logistics as a system—how a small delay in document issuance can ripple through a vessel cut-off, how a change in HS classification can alter duty liabilities, how a border advisory should influence convoy planning. We run scenario drills and after-action reviews so that learning compounds. We celebrate small wins—like a flawlessly prepared document set—because in logistics, small wins accumulate into big advantages. Culture, for us, is the consistent practice of careful work under variable conditions.
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 not-prose mt-12 mb-4">Client Partnership Model</h3>
+              <p className="text-gray-700 leading-relaxed">
+                We engage clients as partners. That means we align on objectives—cost ceilings, schedule priorities, risk tolerances—and we design service levels that reflect those objectives. We are transparent about trade-offs: when a faster route increases cost or risk, we say so clearly; when a slower route protects the budget without compromising deadlines, we recommend it confidently. Our proposals are structured to make choices obvious and to keep surprises to a minimum. During execution, we designate single points of contact who are accountable for the whole journey, not just a segment. After completion, we review performance against agreed KPIs and refine the operating plan for the next movement.
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 not-prose mt-12 mb-4">Industries We Serve</h3>
+              <p className="text-gray-700 leading-relaxed">
+                From government entities and international aid organizations to manufacturers, private importers, and multinational corporations, our portfolio reflects the diversity of Pakistan’s economy and its trading partners. Government projects demand procedural rigor and security coordination; humanitarian missions demand agility and sensitivity to local operating contexts; industrial exports demand consistent lead times and cost control. We adapt our playbooks to each sector while preserving the core standards that keep shipments moving: documentation accuracy, milestone visibility, and disciplined exception handling.
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 not-prose mt-12 mb-4">Frequently Asked Questions</h3>
+              <p className="text-gray-700 leading-relaxed"><strong>What documents do I need for Afghan transit?</strong> Requirements vary by commodity and route, but a typical set includes the commercial invoice, packing list, bill of lading or airway bill, certificate of origin (if applicable), transit permit, and any special licenses tied to the cargo. We provide an upfront document checklist and pre-validate submissions to reduce rework.</p>
+              <p className="text-gray-700 leading-relaxed"><strong>How do you manage delays at borders?</strong> We plan for them. Our routes incorporate buffer time aligned with historical patterns, and our teams escalate early if queues or inspections exceed thresholds. Where possible, we re-sequence handoffs or re-route to preserve delivery commitments.</p>
+              <p className="text-gray-700 leading-relaxed"><strong>Do you support temperature-sensitive cargo?</strong> Yes. We coordinate appropriate equipment and handling protocols and build monitoring into the plan. If the corridor cannot support continuous electronic tracking, we substitute with tighter physical checks and handover documentation.</p>
+              <p className="text-gray-700 leading-relaxed"><strong>Can you help with duty drawback claims?</strong> Our Duty Drawback Division provides advisory, document preparation, and digital claim tracking. We standardize submissions to minimize rejections and shorten recovery cycles.</p>
+              <p className="text-gray-700 leading-relaxed"><strong>What makes your CIS operations different?</strong> Experience and repeatability. We have planned and executed long-distance, multimodal routes via Iran since the early 1990s. Our handoff protocols and documentation standards are designed for endurance across multiple jurisdictions.</p>
+
+              <h3 className="text-2xl font-bold text-gray-900 not-prose mt-12 mb-4">Commitment to the Next 50 Years</h3>
+              <p className="text-gray-700 leading-relaxed">
+                The next chapter of regional trade will be shaped by digitization, evolving regulatory frameworks, and the need for resilient supply chains. We are investing accordingly: better data, better training, and deeper partnerships. Our purpose remains unchanged—to be the logistics partner that makes complexity manageable and outcomes reliable. Whether your cargo is humanitarian aid, industrial machinery, consumer goods, or specialized project components, our promise is the same: thoughtful planning, careful execution, and transparent communication from origin to destination.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Core Values */}
         <section className="py-20 bg-gray-50">
           <div className="container">

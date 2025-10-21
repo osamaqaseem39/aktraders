@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardTitle } from "@/components/ui/card"
 import { 
   Ship, 
   Plane, 
@@ -52,51 +52,42 @@ export function Services() {
             const iconImage: string | undefined = (service as { iconImage?: string }).iconImage
 
             return (
-              <div key={service.id}>
-                <Card className="h-full transition-all duration-200 group border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-0.5">
-                  <CardHeader className="text-center pb-4">
-                    <div className={`w-14 h-14 mx-auto mb-3 rounded-full ${solidBgClass} flex items-center justify-center`}>
-                      {iconImage ? (
-                        <Image src={iconImage} alt={service.shortName || service.name} width={28} height={28} className="h-7 w-7" />
-                      ) : (
-                        <IconComponent className="h-7 w-7 text-white" />
-                      )}
+              <div key={service.id} className="flip-card group animate-fade-in min-h-[280px] md:min-h-[320px]">
+                <div className="flip-inner h-full group-hover:[transform:rotateY(180deg)]">
+                  {/* Front */}
+                  <Card className="h-full transition-all duration-200 border border-gray-200 shadow-sm hover:shadow-md flip-front overflow-hidden flex items-center justify-center text-center p-6">
+                    <div>
+                      <div className={`w-20 h-20 mx-auto mb-4 rounded-full ${solidBgClass} flex items-center justify-center`}>
+                        {iconImage ? (
+                          <Image src={iconImage} alt={service.shortName || service.name} width={48} height={48} className="h-12 w-12" />
+                        ) : (
+                          <IconComponent className="h-12 w-12 text-white" />
+                        )}
+                      </div>
+                      <CardTitle className="text-lg font-semibold text-gray-900">
+                        {service.name}
+                      </CardTitle>
                     </div>
-                    <CardTitle className="text-lg font-semibold text-gray-900">
-                      {service.name}
-                    </CardTitle>
-                    <CardDescription className="text-gray-600">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
-                  
-                  <CardContent className="space-y-4">
-                    {/* Features */}
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-gray-900 text-sm">Key Features:</h4>
-                      <ul className="space-y-1">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="text-sm text-gray-600 flex items-center">
-                            <div className="w-1.5 h-1.5 bg-gray-900 rounded-full mr-2 flex-shrink-0"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  </Card>
 
-                    {/* CTA */}
-                    <Button 
-                      variant="outline" 
-                      className="w-full hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-colors duration-150"
-                      asChild
-                    >
-                      <Link href={`/services/${service.id}`}>
-                        Learn More
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
+                  {/* Back */}
+                  <Card className="h-full border border-gray-200 shadow-md flip-back overflow-hidden flex items-center justify-center p-6 text-center">
+                    <div className="max-w-md space-y-4">
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {service.description}
+                      </p>
+                      <Button 
+                        className="w-full btn-primary"
+                        asChild
+                      >
+                        <Link href={`/services/${service.id}`}>
+                          View Service Details
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
+                  </Card>
+                </div>
               </div>
             )
           })}

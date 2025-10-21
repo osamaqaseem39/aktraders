@@ -115,42 +115,7 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Office Locations */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Our Offices
-              </h3>
-              <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
-                {companyInfo.offices.map((office) => (
-                  <Card key={office.id} className="border-0 shadow-md min-w-[280px] snap-start">
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                          <MapPin className="h-5 w-5 text-blue-600" />
-                        </div>
-                        <div className="space-y-2">
-                          <h4 className="font-semibold text-gray-900">
-                            {office.name}
-                          </h4>
-                          <p className="text-gray-600 text-sm">
-                            {office.address.street}
-                          </p>
-                          <p className="text-gray-600 text-sm">
-                            {office.address.area}, {office.address.city}
-                          </p>
-                          <p className="text-gray-600 text-sm">
-                            {office.address.country}
-                          </p>
-                          <p className="text-blue-600 text-sm font-medium">
-                            {office.phone}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
+            {/* Office Locations moved below the grid */}
           </div>
 
           {/* Contact Form */}
@@ -272,6 +237,43 @@ export function Contact() {
                 )}
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        {/* Office Locations - Full width below contact info and form */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            Our Offices
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {companyInfo.offices.map((office) => (
+              <Card key={office.id} className="border-0 shadow-md">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <MapPin className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <div className="space-y-2">
+                      <h4 className="font-semibold text-gray-900">
+                        {office.name}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {office.address.street}
+                      </p>
+                      <p className="text-gray-600 text-sm">
+                        {office.address.area}, {office.address.city}
+                      </p>
+                      <p className="text-gray-600 text-sm">
+                        {office.address.country}
+                      </p>
+                      <p className="text-blue-600 text-sm font-medium">
+                        {office.phone}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>

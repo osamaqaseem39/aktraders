@@ -7,29 +7,26 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import Link from "next/link"
 import { 
-  Ship, 
   Globe, 
-  Truck, 
-  Package, 
-  Warehouse, 
-  Shield,
-  Calculator,
-  MapPin,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Package,
+  MapPin
 } from "lucide-react"
+import Image from "next/image"
 import { companyInfo } from "@/lib/company-data"
 
-const iconMap = {
-  Ship,
-  Globe,
-  Truck,
-  Package,
-  Warehouse,
-  Shield,
-  Calculator,
-  MapPin
-}
+// Icon mapping for services (currently unused but kept for future use)
+// const iconMap = {
+//   Ship,
+//   Globe,
+//   Truck,
+//   Package,
+//   Warehouse,
+//   Shield,
+//   Calculator,
+//   MapPin
+// }
 
 export default function ServicesPage() {
   return (
@@ -74,14 +71,19 @@ export default function ServicesPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {companyInfo.services.map((service) => {
-                  const IconComponent = iconMap[service.icon as keyof typeof iconMap]
+                  const iconImage: string | undefined = service.iconImage
+                  const solidBgClass = (service.iconColor?.replace("text-", "bg-") || "bg-gray-900").trim()
                   return (
                     <Card key={service.id} className="h-full hover:shadow-lg transition-all duration-300 group">
                       <CardHeader className="pb-4">
-                        <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                          <IconComponent className="h-6 w-6 text-white" />
+                        <div className={`w-16 h-16 rounded-full ${solidBgClass} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                          {iconImage ? (
+                            <Image src={iconImage} alt={service.shortName || service.name} width={32} height={32} className="h-8 w-8" />
+                          ) : (
+                            <Package className="h-7 w-7 text-white" />
+                          )}
                         </div>
-                        <CardTitle className="text-lg">{service.shortName}</CardTitle>
+                        <CardTitle className="text-lg">{service.shortName || service.name}</CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-4">
                         <p className="text-gray-600 text-sm leading-relaxed">
@@ -116,6 +118,14 @@ export default function ServicesPage() {
                           </div>
                         </div>
                       </CardContent>
+                      <div className="px-6 pb-6">
+                        <Button className="w-full btn-primary" asChild>
+                          <Link href={`/services/${service.id}`}>
+                            Learn More
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </Button>
+                      </div>
                     </Card>
                   )
                 })}
@@ -182,12 +192,14 @@ export default function ServicesPage() {
                   </div>
 
                   <div className="relative">
-                    <div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center">
-                      <div className="text-center space-y-4">
-                        <Globe className="h-16 w-16 text-green-600 mx-auto" />
-                        <div className="text-2xl font-bold text-green-800">Afghanistan</div>
-                        <div className="text-green-700">Transit Specialist</div>
-                      </div>
+                    <div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 rounded-2xl overflow-hidden">
+                      <Image 
+                        src="/images/afghantransit.jpg" 
+                        alt="Afghanistan Transit Trade" 
+                        fill 
+                        className="object-cover"
+                      />
+                      
                     </div>
                   </div>
                 </div>
