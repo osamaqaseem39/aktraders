@@ -28,6 +28,7 @@ export default function ContactPage() {
     setIsSubmitted(true)
     setTimeout(() => setIsSubmitted(false), 3000)
   }
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -67,7 +68,6 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-semibold text-gray-900">Email</h4>
                     <p className="text-gray-600">{companyInfo.contact.email.primary}</p>
-                    <p className="text-gray-600">{companyInfo.contact.email.secondary}</p>
                   </div>
                 </div>
 
