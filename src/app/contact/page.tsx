@@ -81,33 +81,24 @@ export default function ContactPage() {
                     <p className="text-gray-600">Saturday: 9:00 AM - 1:00 PM</p>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Offices - full width below on mobile */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Head Office</h3>
-              <div className="grid grid-cols-1 gap-6">
-                {companyInfo.offices.map((office) => (
-                  <Card key={office.id} className="border-0 shadow-md">
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                          <MapPin className="h-5 w-5 text-blue-600" />
-                        </div>
-                        <div className="space-y-2">
-                          <h4 className="font-semibold text-gray-900">{office.name}</h4>
-                          <p className="text-gray-600 text-sm">{office.address.street}</p>
-                          <p className="text-gray-600 text-sm">{office.address.area}, {office.address.city}</p>
-                          <p className="text-gray-600 text-sm">{office.address.country}</p>
-                          <p className="text-blue-600 text-sm font-medium">{office.phone}</p>
-                        </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Head Office</h4>
+                    {companyInfo.offices.map((office) => (
+                      <div key={office.id} className="space-y-1">
+                        <p className="text-gray-600 text-sm">{office.address.street}</p>
+                        <p className="text-gray-600 text-sm">{office.address.area}, {office.address.city}</p>
+                        <p className="text-gray-600 text-sm">{office.address.country}</p>
+                        <p className="text-blue-600 text-sm font-medium">{office.phone}</p>
                       </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                    ))}
+                  </div>
+                </div>
               </div>
-              
             </div>
           </div>
 
