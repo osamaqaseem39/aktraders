@@ -4,6 +4,8 @@ import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
 import { companyInfo } from "@/lib/company-data"
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react"
 
@@ -32,14 +34,16 @@ export default function ContactPage() {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container">
-        <div className="text-center space-y-4 mb-12">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">Contact Us</h1>
-          <p className="text-lg text-gray-600">We’re here to help. Reach out for quotes, support, or general inquiries.</p>
-        </div>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <section className="py-16 bg-gray-50">
+        <div className="container">
+          <div className="text-center space-y-4 mb-12">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">Contact Us</h1>
+            <p className="text-lg text-gray-600">We're here to help. Reach out for quotes, support, or general inquiries.</p>
+          </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
@@ -104,22 +108,6 @@ export default function ContactPage() {
                 ))}
               </div>
               
-              {/* Google Maps Embed */}
-              <div className="mt-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Find Us on Map</h4>
-                <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d65442.51107109316!2d66.9501352!3d30.2050217!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424208bf3865dbdf%3A0x9752b47acad2ad30!2sAK%20Traders%20(Quetta)!5e1!3m2!1sen!2s!4v1761040658738!5m2!1sen!2s" 
-                    width="100%" 
-                    height="100%" 
-                    style={{border: 0}} 
-                    allowFullScreen 
-                    loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="A.K. Traders Location Map"
-                  />
-                </div>
-              </div>
             </div>
           </div>
 
@@ -193,8 +181,30 @@ export default function ContactPage() {
             </Card>
           </div>
         </div>
+
+        {/* Full Width Google Maps Embed */}
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Find Us on Map</h3>
+            <p className="text-gray-600">Visit our head office in Quetta</p>
+          </div>
+          <div className="w-full h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-lg">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d65442.51107109316!2d66.9501352!3d30.2050217!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424208bf3865dbdf%3A0x9752b47acad2ad30!2sAK%20Traders%20(Quetta)!5e1!3m2!1sen!2s!4v1761040658738!5m2!1sen!2s" 
+              width="100%" 
+              height="100%" 
+              style={{border: 0}} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="A.K. Traders Location Map"
+            />
+          </div>
+        </div>
       </div>
     </section>
+    <Footer />
+    </div>
   )
 }
 

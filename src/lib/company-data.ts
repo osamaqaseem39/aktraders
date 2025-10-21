@@ -18,7 +18,7 @@ export const companyInfo = {
     },
     email: {
       primary: "info@aktraders.pk",
-      secondary: "support@aktraders.pk"
+      secondary: "info@aktraders.pk"
     },
     whatsapp: "+92-81-2824023"
   },
