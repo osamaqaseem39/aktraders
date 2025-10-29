@@ -45,6 +45,27 @@ export const companyInfo = {
       hours: "Monday - Friday: 9:00 AM - 6:00 PM",
       services: ["Customs Clearance", "Freight Forwarding", "Afghan Transit Trade", "CIS Transportation"],
       facilities: ["Border Access", "Customs House", "Warehousing", "Project Logistics"]
+    },
+    {
+      id: "lahore",
+      name: "Branch Office Lahore",
+      type: "Branch Office",
+      address: {
+        street: "",
+        area: "",
+        city: "Lahore",
+        country: "Pakistan"
+      },
+      coordinates: {
+        lat: 31.5204,
+        lng: 74.3587
+      },
+      phone: "+92-42-1234567",
+      fax: "+92-42-1234568",
+      email: "lahore@aktraders.pk",
+      hours: "Monday - Friday: 9:00 AM - 6:00 PM",
+      services: ["Freight Forwarding", "Customs Clearance", "Overland Transportation"],
+      facilities: ["Warehousing", "Customs Clearance", "Project Logistics"]
     }
   ],
 
@@ -52,8 +73,7 @@ export const companyInfo = {
   stats: [
     { number: "50+", label: "Years Experience", icon: "Award" },
     { number: "FIATA", label: "Member Since 1982", icon: "Globe" },
-    { number: "1", label: "Head Office", icon: "MapPin" },
-    { number: "24/7", label: "Support Available", icon: "Clock" }
+    { number: "1", label: "Head Office", icon: "MapPin" }
   ],
 
   // Core Services
